@@ -1,4 +1,4 @@
-{% set version = '1.3' %}
+{% set version = '1.4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,19 +11,19 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tfruns_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tfruns/tfruns_{{ version }}.tar.gz
-  sha256: 962aadf373802a4ef1f9a38c25dfa4f6d8bbedf656d0de589953572dc71c2b0a
+  sha256: 6fc31f3b75c1888d3d14fe14a31c3567dab1bc2a4d0a61c0c72d543c422d1bd7
 
 build:
+  merge_build_host: True  # [win]
   number: 0
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-base64enc
@@ -36,7 +36,6 @@ requirements:
     - r-tidyselect
     - r-whisker
     - r-yaml
-
   run:
     - r-base
     - r-base64enc
@@ -58,12 +57,11 @@ test:
 about:
   home: https://github.com/rstudio/tfruns
   license: Apache 2.0
+  license_file: LICENSE.txt
   summary: 'Create and manage unique directories for each ''TensorFlow''  training run. Provides
     a unique, time stamped directory for each run along with functions to retrieve the
     directory of the latest run or  latest several runs. '
-
-  license_family: Apache
-  license_file: LICENSE.txt
+  license_family: APACHE
 
 extra:
   recipe-maintainers:
@@ -72,4 +70,5 @@ extra:
     - daler
     - jdblischak
     - cbrueffer
-    - zamorarr 
+    - dbast
+    - zamorarr
