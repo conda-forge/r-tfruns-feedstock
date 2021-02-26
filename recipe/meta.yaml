@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: tfruns_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/tfruns_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tfruns/tfruns_{{ version }}.tar.gz
   sha256: 898a45a5e8420af1542919874a26cf8c00ae12638e6842197773b818de648e12
 
 build:
-  noarch: generic
   merge_build_host: true  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -56,7 +55,7 @@ test:
 
 about:
   home: https://github.com/rstudio/tfruns
-  license: Apache 2.0
+  license: Apache-2.0
   license_file: LICENSE.txt
   summary: "Create and manage unique directories for each 'TensorFlow'  training run. Provides a unique, time stamped directory for each run along with functions to retrieve the directory of the latest run or  latest several runs. "
   license_family: APACHE
@@ -64,10 +63,4 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
     - zamorarr
