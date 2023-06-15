@@ -1,11 +1,11 @@
-About r-tfruns
-==============
+About r-tfruns-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-tfruns-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/rstudio/tfruns
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-tfruns-feedstock/blob/main/LICENSE.txt)
 
 Summary: Create and manage unique directories for each 'TensorFlow'  training run. Provides a unique, time stamped directory for each run along with functions to retrieve the directory of the latest run or  latest several runs. 
 
