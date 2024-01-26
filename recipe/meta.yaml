@@ -1,4 +1,4 @@
-{% set version = "1.5.1" %}
+{% set version = "1.5.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tfruns_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tfruns/tfruns_{{ version }}.tar.gz
-  sha256: e8f5cb8900607e33aa5530181b01daf21c5bfb669e77940e2930b41e0a6d67f6
+  sha256: 1cab3346df741623cfdd1b12ade6397d6f28bd1ac57144fc7ab63519460688c7
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
